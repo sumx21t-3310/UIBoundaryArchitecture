@@ -45,6 +45,8 @@ CurrentViewMode
 
 このような責務は `Bridge` へ分離します。
 
+逆に、**複数の画面が読む状態も `Scaffold` の責務ではありません。** その画面にいる間だけ意味を持つ値ではないため、置き場所は Application 層です(→ [第2章 状態所有](02-StateOwnership.md))。
+
 ### Flutter の Scaffold とは別概念
 
 Flutter には `Scaffold` というウィジェットがあります。`AppBar` や `Drawer`、`FloatingActionButton` を配置するためのものです。
