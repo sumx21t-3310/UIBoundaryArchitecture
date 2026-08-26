@@ -5,8 +5,7 @@ import starlightLlmsTxt from 'starlight-llms-txt';
 const repository = 'https://github.com/sumx21t-3310/UIBoundaryArchitecture';
 
 export default defineConfig({
-  site: 'https://sumx21t-3310.github.io',
-  base: '/UIBoundaryArchitecture',
+  site: 'https://ui-boundary-architecture.sumx21t.com',
   integrations: [
     starlight({
       title: 'UI Boundary Architecture',
