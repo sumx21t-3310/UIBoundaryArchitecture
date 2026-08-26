@@ -1,4 +1,7 @@
-# 第5章 既存の設計手法との比較
+---
+title: 第5章 既存の設計手法との比較
+description: Atomic Design、Islands Architectureとの違いと併用方法を説明します
+---
 
 UI Boundary Architecture は、Atomic Design や Islands Architecture を置き換えるために作られたものではありません。分類の基準が違うため、**同じ画面に対して別のことを言っています。**
 
@@ -54,7 +57,7 @@ Atoms / Molecules                （Atomic Design に対応物なし）
 
 UI Boundary Architecture もこの帯を含んでいるので、**「Atomic Design はライブラリ専用、UI Boundary Architecture はアプリ専用」と切り分けられるわけではありません。** 帯の中では観点が2つあり、帯の外では片方しかない、という関係です。
 
-この境目は、ディレクトリ構成の規則とも一致します。「`Part` は最初から共有領域に置ける」「`Island` は慎重に共有する」という第7章の規則は、**ライブラリになりうるものと、アプリ固有のものの線**を引いたものです(→ [第7章 ディレクトリ構成と共有](07-ProjectLayout.md))。
+この境目は、ディレクトリ構成の規則とも一致します。「`Part` は最初から共有領域に置ける」「`Island` は慎重に共有する」という第7章の規則は、**ライブラリになりうるものと、アプリ固有のものの線**を引いたものです(→ [第7章 ディレクトリ構成と共有](../07-projectlayout/))。
 
 ### 分類の基準が違う
 
@@ -86,7 +89,7 @@ UI Boundary Architecture が見ているのは、**責務と状態所有**です
 
 **この見方をすると、Atomic Design は `Part` と `Component` の内側にある「大きさの目盛り」として使えます。**
 
-UI Boundary Architecture は「大きさは基準ではない」と繰り返していて、**どこまで細かく分けるべきかには答えていません**(→ [第8章 分類に迷ったとき](08-Classification.md))。Atomic Design はまさにその問いに答える手法です。片方が空けている場所に、もう片方が入ります。
+UI Boundary Architecture は「大きさは基準ではない」と繰り返していて、**どこまで細かく分けるべきかには答えていません**(→ [第8章 分類に迷ったとき](../08-classification/))。Atomic Design はまさにその問いに答える手法です。片方が空けている場所に、もう片方が入ります。
 
 ### この見方が成り立つ範囲
 
@@ -136,7 +139,7 @@ Atomic Design の5段階はすべて**含む・含まれる**の関係です。�
 
 しかし「2つの Organism が同じ選択状態を共有している」という関係は、含む・含まれるでは表せません。共通の親である Template に持たせるしかなく、そうすると Template は「レイアウトの骨格」ではなくなります。
 
-UI Boundary Architecture の `Bridge` は、この関係を表すために存在します。`Bridge` は描画構造に現れないため、含む・含まれるの関係とは独立に置けます(→ [第3章 論理構造と描画構造](03-Structure.md))。
+UI Boundary Architecture の `Bridge` は、この関係を表すために存在します。`Bridge` は描画構造に現れないため、含む・含まれるの関係とは独立に置けます(→ [第3章 論理構造と描画構造](../03-structure/))。
 
 ### 併用できるか
 
@@ -149,7 +152,7 @@ UI Boundary Architecture の `Bridge` は、この関係を表すために存在
 
 デザインシステム側で Atoms / Molecules として管理している部品を、実装側では `Part` / `Component` として配置する、という運用は成立します。ただし**両方の名前を同時に使うと会話が混乱する**ため、どちらの語彙で話しているかを明示してください。
 
-すでに Atomic Design で分類されたコードがある場合の、具体的な進め方は [第6章 適用のしかた](06-Adoption.md) で扱います。既存の `atoms/` や `organisms/` を作り直す必要はありません。
+すでに Atomic Design で分類されたコードがある場合の、具体的な進め方は [第6章 適用のしかた](../06-adoption/) で扱います。既存の `atoms/` や `organisms/` を作り直す必要はありません。
 
 ## Islands Architecture との比較
 
@@ -223,7 +226,3 @@ Astro のようなフレームワークで実装する場合、island として�
 
 - Jason Miller「Islands Architecture」(2020年8月11日) — https://jasonformat.com/islands-architecture/
 - Astro ドキュメント「Islands architecture」 — https://docs.astro.build/en/concepts/islands/
-
----
-
-← 前: [第4章 レスポンシブ設計](04-ResponsiveDesign.md) ・ [目次](README.md) ・ 次: [第6章 適用のしかた](06-Adoption.md) →

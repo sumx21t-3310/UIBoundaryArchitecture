@@ -1,4 +1,7 @@
-# 第3章 論理構造と描画構造
+---
+title: 第3章 論理構造と描画構造
+description: 責務の構造と画面上の見え方が一致しない理由を説明します
+---
 
 UI Boundary Architecture では、**論理構造(Logical Structure)**と**描画構造(Visual Structure)**が必ずしも一致しません。
 
@@ -109,7 +112,3 @@ Scaffold
 - レスポンシブ対応によって、描画構造の親子関係は入れ替わります
 
 この並びが表しているのは、**状態・責務・協調関係を含めた論理的なUI構造**です。
-
----
-
-← 前: [第2章 状態所有](02-StateOwnership.md) ・ [目次](README.md) ・ 次: [第4章 レスポンシブ設計](04-ResponsiveDesign.md) →
