@@ -1,4 +1,7 @@
-# 第1章 5つの境界
+---
+title: 第1章 5つの境界
+description: 5つの単位が何を境界としているのか、どう判定するのかを説明します
+---
 
 この章では、`Scaffold` / `Bridge` / `Island` / `Component` / `Part` の5つの単位について、それぞれが何を境界としているのか、どう判定するのかを説明します。
 
@@ -35,7 +38,7 @@ CurrentViewMode
 
 - `Island` を画面上のどこに配置するかを決める
 - 画面全体のライフサイクル(画面に入ったとき、離れるときの処理)を管理する
-- 画面サイズに応じて `Island` 同士の配置を変える(→ [第4章 レスポンシブ設計](04-ResponsiveDesign.md))
+- 画面サイズに応じて `Island` 同士の配置を変える(→ [第4章 レスポンシブ設計](../04-responsivedesign/))
 
 ### Scaffold の責務ではないもの
 
@@ -45,7 +48,7 @@ CurrentViewMode
 
 このような責務は `Bridge` へ分離します。
 
-逆に、**複数の画面が読む状態も `Scaffold` の責務ではありません。** その画面にいる間だけ意味を持つ値ではないため、置き場所は Application 層です(→ [第2章 状態所有](02-StateOwnership.md))。
+逆に、**複数の画面が読む状態も `Scaffold` の責務ではありません。** その画面にいる間だけ意味を持つ値ではないため、置き場所は Application 層です(→ [第2章 状態所有](../02-stateownership/))。
 
 ### Flutter の Scaffold とは別概念
 
@@ -82,7 +85,7 @@ TimelineScaffold
 └─ ThreadIsland
 ```
 
-この2つの図の差が `Bridge` の性質そのものです。詳しくは [第3章 論理構造と描画構造](03-Structure.md) で扱います。
+この2つの図の差が `Bridge` の性質そのものです。詳しくは [第3章 論理構造と描画構造](../03-structure/) で扱います。
 
 ### Bridge が所有する状態
 
@@ -235,7 +238,7 @@ ProjectScaffold
 
 `Island` という名前は、Web の Islands Architecture における Hydration の境界から着想を得ています。
 
-ただし、由来が同じであることと、同じものであることは違います。Islands Architecture の island は「ブラウザへJavaScriptを送る単位」であり、UI Boundary Architecture の `Island` は「機能と状態の独立境界」です。詳しくは [第5章 既存の設計手法との比較](05-Comparison.md) で扱います。
+ただし、由来が同じであることと、同じものであることは違います。Islands Architecture の island は「ブラウザへJavaScriptを送る単位」であり、UI Boundary Architecture の `Island` は「機能と状態の独立境界」です。詳しくは [第5章 既存の設計手法との比較](../05-comparison/) で扱います。
 
 ## Component
 
@@ -377,7 +380,3 @@ LineChart（Part）
 
 **`Island` を1つも作らない。**
 `Scaffold` の直下にいきなり `Component` が並んでいる場合、機能の境界が切られていない可能性があります。状態が `Scaffold` へ集まり、更新境界も画面全体になります。
-
----
-
-[目次](README.md) ・ 次: [第2章 状態所有](02-StateOwnership.md) →
